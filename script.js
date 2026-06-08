@@ -11,3 +11,4 @@ document.querySelectorAll('.nav-links a').forEach((link) => {
 });
 
 year.textContent = new Date().getFullYear();
+
