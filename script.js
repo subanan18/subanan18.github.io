@@ -1,14 +1,1 @@
-const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
-const year = document.querySelector('#year');
-
-toggle.addEventListener('click', () => {
-  links.classList.toggle('active');
-});
-
-document.querySelectorAll('.nav-links a').forEach((link) => {
-  link.addEventListener('click', () => links.classList.remove('active'));
-});
-
-year.textContent = new Date().getFullYear();
-
+const menu=document.querySelector('.menu');const nav=document.querySelector('.navlinks');menu?.addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.querySelector('#year').textContent=new Date().getFullYear();const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.animate([{opacity:0,transform:'translateY(18px)'},{opacity:1,transform:'translateY(0)'}],{duration:550,easing:'ease-out',fill:'both'});reveal.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.project,.skillgrid>div,.timeline article,.moregrid a').forEach(el=>reveal.observe(el));
